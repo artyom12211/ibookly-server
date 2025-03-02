@@ -3,7 +3,6 @@
 /node_modules
 /build
 /s3
-/src/s3*
 /src/service/s3*
 
 # Logs
