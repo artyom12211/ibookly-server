@@ -1,0 +1,21 @@
+export class Studio {
+    id: number;                    // ID студии (2)
+    createdAt: Date;              // Дата создания (2025-01-31 18:43:51.446)
+    updatedAt: Date;              // Дата обновления (2025-01-31 18:43:51.446)
+    title: string;                 // Название ("Six Gemini Studio")
+    description: string;          // Описание (длинный текст)
+    activated: boolean;            // Активна ли студия (true)
+    address: string;              // Адрес ("Ул. Василисы Кожиной, 13")
+    metro: string;                // Метро ("Багратионовская")
+    phone: string;                // Телефон ("+7 (999) 821-23-62")
+    price_range: number[];         // Диапазон цен ([1800, 5000])
+    ref: string;           // Ссылка на бронирование ("https://www.studiorent.ru/studios/157702/157746/")
+    telegram_channel: string;          // Ссылка на Telegram ("https://t.me/SixGeminiStudio")
+    telegram_contact: string;          // Ссылка на Telegram ("https://t.me/SixGeminiStudio")
+    images_urls: string[];             // Массив ссылок на фото (JSON-строка, распаршенная как массив)
+    height: number;               // Рейтинг (3)
+    rooms: number;         // Количество отзывов (4)
+    shooting_square: number;                 // Площадь (142)
+    total_square: number;             // Вместимость (75)
+    workhours: number[];
+}

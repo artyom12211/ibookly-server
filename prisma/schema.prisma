@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 Int      @id @default(autoincrement())
+  userid             String   @unique // Предполагается, что userid — это BigInt, так как число большое
+  firstname          String
+  username           String?
+  language_code      String
+  allows_write_to_pm Boolean  @default(true)
+  has_pro            Boolean  @default(false)
+  created_at         DateTime @default(now())  // Используем BigInt для временной метки в миллисекундах
+}
+
+model Studio {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  title     String   @db.VarChar(255)
+  description String?
+  address   String?   
+  metro     String?   
+  workhours     Int[]   
+  total_square    Int?   
+  shooting_square Int?   
+  price_range Int[] 
+  rooms Int?
+  height Int?
+  phone     String? @db.VarChar(20)
+  telegram_channel String?
+  telegram_contact String? 
+  // min_rent_hour Int?
+  ref       String?   
+  images_urls String[]
+  activated Boolean  @default(false)
+}
